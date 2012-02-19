@@ -11,33 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWSWeather.Sample", "Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgFx.Test", "AgFx.Test\AgFx.Test.csproj", "{6CCB81E6-1746-43A6-A8C3-051463A36E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Auth.Sample", "samples\Facebook.Auth.Sample\Facebook.Auth.Sample.csproj", "{89A84736-B4D7-4C0D-BA3F-EE778AB58C6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Auth.Sample", "Samples\Facebook.Auth.Sample\Facebook.Auth.Sample.csproj", "{89A84736-B4D7-4C0D-BA3F-EE778AB58C6A}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AgFx\\AgFx.csproj
-		SccProjectName1 = AgFx
-		SccLocalPath1 = AgFx
-		SccProjectUniqueName2 = AgFx.Test\\AgFx.Test.csproj
-		SccProjectName2 = AgFx.Test
-		SccLocalPath2 = AgFx.Test
-		SccProjectUniqueName3 = AgFx.Controls\\AgFx.Controls.Phone.csproj
-		SccProjectName3 = AgFx.Controls
-		SccLocalPath3 = AgFx.Controls
-		SccProjectUniqueName4 = Samples\\Flickr.Sample\\Flickr.Sample.csproj
-		SccProjectName4 = Samples/Flickr.Sample
-		SccLocalPath4 = Samples\\Flickr.Sample
-		SccProjectUniqueName5 = Samples\\NWSWeather.Sample\\NWSWeather.Sample.csproj
-		SccProjectName5 = Samples/NWSWeather.Sample
-		SccLocalPath5 = Samples\\NWSWeather.Sample
-		SccProjectUniqueName6 = samples\\Facebook.Auth.Sample\\Facebook.Auth.Sample.csproj
-		SccProjectName6 = samples/Facebook.Auth.Sample
-		SccLocalPath6 = samples\\Facebook.Auth.Sample
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
