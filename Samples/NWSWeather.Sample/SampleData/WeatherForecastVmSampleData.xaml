@@ -1,0 +1,24 @@
+﻿<NWSWeather_Sample_ViewModels:WeatherForecastVm xmlns:NWSWeather_Sample_ViewModels="clr-namespace:NWSWeather.Sample.ViewModels" xmlns:System_Threading="clr-namespace:System.Threading;assembly=mscorlib" xmlns:NWSWeather_Sample_Services="clr-namespace:NWSWeather.Sample.Services" IsUpdating="False" LastUpdated="12/15/2010 20:39:46">
+	<NWSWeather_Sample_ViewModels:WeatherForecastVm.NotificationContext>
+		<System_Threading:SynchronizationContext/>
+	</NWSWeather_Sample_ViewModels:WeatherForecastVm.NotificationContext>
+	<NWSWeather_Sample_ViewModels:WeatherForecastVm.WeatherPeriods>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="60" Summary="Maecenas curabitur praesent class" StartTime="12/15/2010 20:39:46" Title="Aenean" Units="Donec etiam cras aenean"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="19" Summary="Phasellus duis nunc" StartTime="12/15/2010 20:39:46" Title="Nam maecenas" Units="Fusce amet"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="55" Summary="Dis vestibulum" StartTime="12/15/2010 20:39:46" Title="Aliquam cras" Units="Est lorem mauris quisque morbi"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="14" Summary="Dictumst vivamus nulla" StartTime="12/15/2010 20:39:46" Title="Class integer" Units="Vestibulum facilisi"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="63" Summary="Aliquam augue nullam" StartTime="12/15/2010 20:39:46" Title="Sed" Units="Aptent dolor"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="79" Summary="Blandit vestibulum" StartTime="12/15/2010 20:39:46" Title="Duis curae" Units="Habitant conubia inceptos congue cubilia"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="46" Summary="Dignissim dapibus parturient interdum vestibulum" StartTime="12/15/2010 20:39:46" Title="Mauris quisque" Units="Facilisis leo"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="89" Summary="Mus adipiscing" StartTime="12/15/2010 20:39:46" Title="Vivamus" Units="Lobortis habitasse nec felis nascetur"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="22" Summary="Parturient hendrerit gravida iaculis diam" StartTime="12/15/2010 20:39:46" Title="Dis" Units="Eget lacinia elit placerat"/>
+		<NWSWeather_Sample_Services:WeatherPeriod EndTime="12/15/2010 20:39:46" PrecipChancePercent="23" Summary="Pulvinar cursus dictum enim" StartTime="12/15/2010 20:39:46" Title="Est aliquam" Units="Erat laoreet lacus"/>
+	</NWSWeather_Sample_ViewModels:WeatherForecastVm.WeatherPeriods>
+	<NWSWeather_Sample_ViewModels:WeatherForecastVm.ZipCodeInfo>
+		<NWSWeather_Sample_ViewModels:ZipCodeVm AreaCode="Natoque per sed" City="Cras aenean" IsUpdating="True" LastUpdated="12/15/2010 20:39:46" State="Imperdiet vestibulum lectus" TimeZone="Eros nibh posuere nisi" ZipCode="Nisl magna sagittis libero">
+			<NWSWeather_Sample_ViewModels:ZipCodeVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</NWSWeather_Sample_ViewModels:ZipCodeVm.NotificationContext>
+		</NWSWeather_Sample_ViewModels:ZipCodeVm>
+	</NWSWeather_Sample_ViewModels:WeatherForecastVm.ZipCodeInfo>
+</NWSWeather_Sample_ViewModels:WeatherForecastVm>

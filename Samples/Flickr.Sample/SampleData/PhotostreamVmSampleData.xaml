@@ -1,0 +1,127 @@
+<Flicker_Sample_Model:PhotostreamVm xmlns:Flicker_Sample_Model="clr-namespace:Flickr.Sample.Model" xmlns:System_Threading="clr-namespace:System.Threading;assembly=mscorlib" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" Page="91" PageSize="92" Pages="42" TotalPhotos="77">
+	<Flicker_Sample_Model:PhotostreamVm.NotificationContext>
+		<System_Threading:SynchronizationContext/>
+	</Flicker_Sample_Model:PhotostreamVm.NotificationContext>
+	<Flicker_Sample_Model:PhotostreamVm.Photos>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Curabitur cras vestibulum phasellus aenean" Description="Adipiscing mauris aliquam maecenas nullam" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" OwnerId="Class duis consequat" Posted="12/23/2010 14:14:56" Taken="Erat eros vestibulum dictum" Title="Etiam lectus blandit commodo libero" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Nunc nam amet aptent parturient" Flicker_Sample_Model:PhotoTag.RawTag="Praesent integer ante convallis accumsan" Flicker_Sample_Model:PhotoTag.Tag="Sed bibendum arcu"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vestibulum dis" Flicker_Sample_Model:PhotoTag.RawTag="Curae diam" Flicker_Sample_Model:PhotoTag.Tag="Vestibulum dictumst dignissim"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Eleifend auctor" Flicker_Sample_Model:PhotoTag.RawTag="Quisque vivamus donec" Flicker_Sample_Model:PhotoTag.Tag="Facilisi faucibus"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Elementum habitant" Flicker_Sample_Model:PhotoTag.RawTag="Est eget" Flicker_Sample_Model:PhotoTag.Tag="Inceptos facilisis aliquam"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Elit enim fermentum hac" Flicker_Sample_Model:PhotoTag.RawTag="Congue cursus interdum fringilla" Flicker_Sample_Model:PhotoTag.Tag="Adipiscing aliquet parturient"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Nibh habitasse ligula lobortis" Description="Leo fusce mus" IsUpdating="False" LastUpdated="12/23/2010 14:14:56" OwnerId="Hendrerit conubia" Posted="12/23/2010 14:14:56" Taken="Augue primis" Title="Sed vestibulum porttitor rutrum sapien" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Himenaeos cubilia" Flicker_Sample_Model:PhotoTag.RawTag="Litora vestibulum" Flicker_Sample_Model:PhotoTag.Tag="Dapibus nascetur"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Imperdiet egestas nisi luctus lorem" Flicker_Sample_Model:PhotoTag.RawTag="Nisl malesuada magnis adipiscing euismod" Flicker_Sample_Model:PhotoTag.Tag="Nunc mattis pharetra mauris"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Morbi feugiat" Flicker_Sample_Model:PhotoTag.RawTag="Gravida nec" Flicker_Sample_Model:PhotoTag.Tag="Mollis montes nostra placerat"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Non parturient odio" Flicker_Sample_Model:PhotoTag.RawTag="Ornare penatibus orci pede" Flicker_Sample_Model:PhotoTag.Tag="Per iaculis quam lacinia"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Nulla laoreet" Flicker_Sample_Model:PhotoTag.RawTag="Pulvinar proin" Flicker_Sample_Model:PhotoTag.Tag="Quis urna cras platea"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Duis nunc" Description="Vestibulum dolor natoque amet ante" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" OwnerId="Arcu semper" Posted="12/23/2010 14:14:56" Taken="Non adipiscing tempus morbi" Title="Sociosqu parturient vestibulum viverra" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Fames diam adipiscing" Flicker_Sample_Model:PhotoTag.RawTag="Felis posuere eget" Flicker_Sample_Model:PhotoTag.Tag="Parturient sem vestibulum"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Tincidunt ipsum" Flicker_Sample_Model:PhotoTag.RawTag="Tristique sagittis justo" Flicker_Sample_Model:PhotoTag.Tag="Sociis vestibulum elit"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Adipiscing enim erat sit" Flicker_Sample_Model:PhotoTag.RawTag="Parturient taciti vel tellus" Flicker_Sample_Model:PhotoTag.Tag="Vestibulum nam sed eros senectus"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Tempor dis lacus lorem" Flicker_Sample_Model:PhotoTag.RawTag="Est hac magna ultricies venenatis" Flicker_Sample_Model:PhotoTag.Tag="Nibh potenti"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Leo mus vestibulum nec" Flicker_Sample_Model:PhotoTag.RawTag="Pretium rhoncus vulputate sodales massa" Flicker_Sample_Model:PhotoTag.Tag="Metus nisi"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Nisl curabitur phasellus neque" Description="Tortor netus turpis" IsUpdating="False" LastUpdated="12/23/2010 14:14:56" OwnerId="Varius nulla aenean" Posted="12/23/2010 14:14:56" Taken="Fermentum duis nunc nulla fringilla" Title="Amet praesent proin ante congue" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Suscipit porta per" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum torquent adipiscing parturient aliquam" Flicker_Sample_Model:PhotoTag.Tag="Sed consequat mauris nunc"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Integer convallis purus odio vestibulum" Flicker_Sample_Model:PhotoTag.RawTag="Risus dignissim ultrices velit" Flicker_Sample_Model:PhotoTag.Tag="Vitae vestibulum class"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Sem vehicula" Flicker_Sample_Model:PhotoTag.RawTag="Orci elementum nullam volutpat" Flicker_Sample_Model:PhotoTag.Tag="Sit pede quisque quam maecenas"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Adipiscing quis vel" Flicker_Sample_Model:PhotoTag.RawTag="Curae aptent donec nam" Flicker_Sample_Model:PhotoTag.Tag="Parturient sed urna vestibulum etiam"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vestibulum adipiscing fusce lorem cras" Flicker_Sample_Model:PhotoTag.RawTag="Vivamus aliquam dis" Flicker_Sample_Model:PhotoTag.Tag="Morbi auctor facilisis parturient vestibulum"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Est habitasse hac cursus dictum" Description="Arcu lectus hendrerit leo" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" OwnerId="Mus augue dolor" Posted="12/23/2010 14:14:56" Taken="Tincidunt mauris sed tristique" Title="Mollis montes lorem parturient ultricies" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Himenaeos diam" Flicker_Sample_Model:PhotoTag.RawTag="Fames vestibulum accumsan" Flicker_Sample_Model:PhotoTag.Tag="Adipiscing nec libero"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Ligula felis eget litora bibendum" Flicker_Sample_Model:PhotoTag.RawTag="Non parturient aliquet" Flicker_Sample_Model:PhotoTag.Tag="Ipsum per justo"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vestibulum imperdiet" Flicker_Sample_Model:PhotoTag.RawTag="Blandit elit commodo" Flicker_Sample_Model:PhotoTag.Tag="Sed sem sit vestibulum malesuada"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Dictumst eleifend" Flicker_Sample_Model:PhotoTag.RawTag="Penatibus conubia luctus" Flicker_Sample_Model:PhotoTag.Tag="Magnis vel nam"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Porttitor cubilia facilisi lacus faucibus" Flicker_Sample_Model:PhotoTag.RawTag="Adipiscing habitant inceptos" Flicker_Sample_Model:PhotoTag.Tag="Interdum lobortis mattis enim"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Venenatis dapibus vestibulum erat" Description="Egestas vulputate euismod magna" IsUpdating="False" LastUpdated="12/23/2010 14:14:56" OwnerId="Curabitur eros nascetur vestibulum feugiat" Posted="12/23/2010 14:14:56" Taken="Posuere adipiscing" Title="Porta potenti pede" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Nostra ornare" Flicker_Sample_Model:PhotoTag.RawTag="Gravida pharetra" Flicker_Sample_Model:PhotoTag.Tag="Dis placerat iaculis phasellus"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Platea primis pulvinar" Flicker_Sample_Model:PhotoTag.RawTag="Sagittis adipiscing nibh senectus est" Flicker_Sample_Model:PhotoTag.Tag="Nisi parturient"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Hac leo nisl" Flicker_Sample_Model:PhotoTag.RawTag="Mus vestibulum consequat" Flicker_Sample_Model:PhotoTag.Tag="Nec nunc"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Non per massa" Flicker_Sample_Model:PhotoTag.RawTag="Convallis lacinia dignissim metus" Flicker_Sample_Model:PhotoTag.Tag="Morbi sed laoreet neque"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Sociosqu rutrum" Flicker_Sample_Model:PhotoTag.RawTag="Suscipit netus vestibulum nulla odio" Flicker_Sample_Model:PhotoTag.Tag="Orci natoque torquent"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Pretium elementum purus sapien" Description="Rhoncus facilisis sodales" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" OwnerId="Parturient viverra semper" Posted="12/23/2010 14:14:56" Taken="Hendrerit ante vestibulum turpis adipiscing" Title="Arcu varius donec aenean" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Aliquam integer fermentum" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum sociis ultrices quam sem" Flicker_Sample_Model:PhotoTag.Tag="Vehicula taciti quisque tellus"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Volutpat risus maecenas fringilla" Flicker_Sample_Model:PhotoTag.RawTag="Vivamus aliquam aliquet blandit quis" Flicker_Sample_Model:PhotoTag.Tag="Sit velit vitae"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Urna tempor" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum commodo vel" Flicker_Sample_Model:PhotoTag.Tag="Conubia cras cubilia duis"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Adipiscing tempus" Flicker_Sample_Model:PhotoTag.RawTag="Praesent class" Flicker_Sample_Model:PhotoTag.Tag="Curae nam parturient"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Tortor vestibulum dapibus" Flicker_Sample_Model:PhotoTag.RawTag="Sed accumsan nunc amet" Flicker_Sample_Model:PhotoTag.Tag="Dis habitasse"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Bibendum est" Description="Dictumst eleifend" IsUpdating="False" LastUpdated="12/23/2010 14:14:56" OwnerId="Hac diam etiam" Posted="12/23/2010 14:14:56" Taken="Vestibulum nisl adipiscing" Title="Per sed parturient" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Leo fusce himenaeos parturient vestibulum" Flicker_Sample_Model:PhotoTag.RawTag="Mauris lorem egestas euismod eget" Flicker_Sample_Model:PhotoTag.Tag="Morbi feugiat"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Elit facilisi mus nulla" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum faucibus proin" Flicker_Sample_Model:PhotoTag.Tag="Augue enim nec erat"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Habitant adipiscing nullam" Flicker_Sample_Model:PhotoTag.RawTag="Parturient inceptos non eros interdum" Flicker_Sample_Model:PhotoTag.Tag="Imperdiet dolor malesuada gravida penatibus"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Fames nibh vestibulum felis" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum aptent adipiscing" Flicker_Sample_Model:PhotoTag.Tag="Porttitor parturient"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Tincidunt nisi" Flicker_Sample_Model:PhotoTag.RawTag="Lobortis iaculis" Flicker_Sample_Model:PhotoTag.Tag="Tristique ultricies vestibulum nascetur"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Lacinia laoreet pharetra auctor ipsum" Description="Congue cursus nunc" IsUpdating="True" LastUpdated="12/23/2010 14:14:56" OwnerId="Dictum odio orci" Posted="12/23/2010 14:14:56" Taken="Himenaeos aliquam mattis" Title="Integer quisque mauris nunc" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vestibulum venenatis" Flicker_Sample_Model:PhotoTag.RawTag="Vulputate vestibulum" Flicker_Sample_Model:PhotoTag.Tag="Lectus placerat pede justo"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Curabitur sem quam quis sit" Flicker_Sample_Model:PhotoTag.RawTag="Lacus libero phasellus" Flicker_Sample_Model:PhotoTag.Tag="Urna ligula natoque"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Posuere consequat lorem" Flicker_Sample_Model:PhotoTag.RawTag="Cras litora convallis" Flicker_Sample_Model:PhotoTag.Tag="Magna vel potenti luctus pretium"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Pulvinar dignissim rhoncus massa" Flicker_Sample_Model:PhotoTag.RawTag="Elementum nam sed" Flicker_Sample_Model:PhotoTag.Tag="Facilisis sodales magnis"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Fermentum fringilla metus habitasse" Flicker_Sample_Model:PhotoTag.RawTag="Morbi neque viverra duis adipiscing" Flicker_Sample_Model:PhotoTag.Tag="Sagittis netus hendrerit"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+		<Flicker_Sample_Model:PhotoVm CollectionIdentifier="Amet senectus" Description="Vivamus parturient" IsUpdating="False" LastUpdated="12/23/2010 14:14:56" OwnerId="Nulla mollis montes" Posted="12/23/2010 14:14:56" Taken="Parturient vestibulum elit mus praesent" Title="Rutrum egestas phasellus" Updated="12/23/2010 14:14:56">
+			<Flicker_Sample_Model:PhotoVm.NotificationContext>
+				<System_Threading:SynchronizationContext/>
+			</Flicker_Sample_Model:PhotoVm.NotificationContext>
+			<Flicker_Sample_Model:PhotoVm.Tags>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Aliquam sociosqu" Flicker_Sample_Model:PhotoTag.RawTag="Nostra porta" Flicker_Sample_Model:PhotoTag.Tag="Suscipit purus vestibulum"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Ante imperdiet" Flicker_Sample_Model:PhotoTag.RawTag="Vestibulum dis ornare arcu platea" Flicker_Sample_Model:PhotoTag.Tag="Torquent malesuada"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Ultrices penatibus" Flicker_Sample_Model:PhotoTag.RawTag="Diam porttitor" Flicker_Sample_Model:PhotoTag.Tag="Est hac tincidunt risus aliquet"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vehicula blandit velit tristique eget" Flicker_Sample_Model:PhotoTag.RawTag="Ultricies adipiscing vitae" Flicker_Sample_Model:PhotoTag.Tag="Venenatis vulputate parturient curabitur commodo"/>
+				<Flicker_Sample_Model:PhotoTag Flicker_Sample_Model:PhotoTag.ID="Vestibulum vestibulum adipiscing conubia" Flicker_Sample_Model:PhotoTag.RawTag="Volutpat cubilia dapibus leo" Flicker_Sample_Model:PhotoTag.Tag="Class maecenas primis"/>
+			</Flicker_Sample_Model:PhotoVm.Tags>
+		</Flicker_Sample_Model:PhotoVm>
+	</Flicker_Sample_Model:PhotostreamVm.Photos>
+</Flicker_Sample_Model:PhotostreamVm>

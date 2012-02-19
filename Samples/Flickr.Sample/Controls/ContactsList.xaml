@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Flickr.Sample.Controls.ContactsList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             xmlns:agfxctls="clr-namespace:AgFx.Controls;assembly=AgFx.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
+            <ItemsControl ItemsSource="{Binding Contacts}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="75" Width="350" Margin="0,0,0,2">
+                            <Rectangle Fill="Silver" Width="75" Height="75" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Image Width="75" Height="75" Source="{Binding ProfileIconUrl}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <agfxctls:HyperlinkButtonEx NavigateUrlFormat="/Homepage.xaml?userid={0}" NavigateUrlParam="{Binding UserId}" Content="{Binding UserName}" Margin="77, 0, 0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>                            
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

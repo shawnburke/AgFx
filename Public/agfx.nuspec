@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>AgFx</id>
+    <version>1.1.0.1101</version>
+    <authors>Shawn Burke, Microsoft Corporation</authors>
+    <description>AgFx is a data caching framework that makes it easy to build data-connected Windows Phone applications.</description>
+    <language>en-US</language>
+    <licenseUrl>http://agfx.codeplex.com/license</licenseUrl>
+    <projectUrl>http://agfx.codeplex.com/</projectUrl>
+  </metadata>  
+  <files>
+    <file src="..\AgFx.Controls\bin\Release\AgFx.dll" target="lib\sl4" />
+    <file src="..\AgFx.Controls\bin\Release\AgFx.dll" target="lib\sl3-wp" />
+    <file src="..\AgFx.Controls\bin\Release\AgFx.Controls.dll" target="lib\sl3-wp" />
+  </files>  
+</package>
+
