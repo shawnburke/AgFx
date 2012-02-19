@@ -93,6 +93,7 @@
     <Compile Include="IDataLoader.cs" />
     <Compile Include="DataLoaderAttribute.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="INotifyOnCompletion.cs" />
     <Compile Include="LoadContext.cs" />
     <Compile Include="LoaderType.cs" />
     <Compile Include="LoadRequestFailedException.cs" />
