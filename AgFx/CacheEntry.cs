@@ -649,9 +649,7 @@ namespace AgFx
                 GetRootedObjectInternal(false, out _rootedValue);
 
                 PriorityQueue.AddWorkItem(() =>
-                        {
-                            LoadInternal(force);
-                        }
+                    LoadInternal(force)
                 );
             }
         }
@@ -814,6 +812,13 @@ namespace AgFx
             if (iupd != null)
             {
                 iupd.IsUpdating = false;
+            }
+
+            // This is a custom one-off I use in my apps right now.
+            INotifyOnCompletion inoc = ValueInternal as INotifyOnCompletion;
+            if (inoc != null)
+            {
+                inoc.OnCompletion(ex);
             }
 
             LoaderType loaderType = loader != null ? loader.LoaderType : LoaderType.CacheLoader;

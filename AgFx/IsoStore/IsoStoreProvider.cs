@@ -48,7 +48,33 @@ namespace AgFx.IsoStore {
 
             string search = Path.Combine(root, "*");
 
-            List<string> files = new List<string>(IsoStore.GetFileNames(search));
+            List<string> files = new List<string>();
+            try {
+                files.AddRange(IsoStore.GetFileNames(search));
+            }
+                // These catch statements help with some rare exception stacks
+                // similar to this:
+                // 
+                // System.IO.IsolatedStorage.IsolatedStorageException
+                //   at System.IO.IsolatedStorage.IsolatedStorageFile.EnsureAccessToPath(String PathAllowed, String PathRequested)
+                //   at System.IO.IsolatedStorage.IsolatedStorageFile.GetFileDirectoryNames(String path, String msg, Boolean file)
+                //   at System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames(String searchPattern)
+                //   at AgFx.IsoStore.HashedIsoStoreProvider.GetItems(String uniqueName)
+                //   at AgFx.IsoStore.HashedIsoStoreProvider.GetLastestExpiringItem(String uniqueName)
+                //   at AgFx.CacheEntry.CacheValueLoader.FindCacheItem()
+                //   at AgFx.CacheEntry.CacheValueLoader.get_IsValid()
+                //   at AgFx.CacheEntry.LoadInternal(Boolean force)
+                //   at AgFx.CacheEntry.<>c__DisplayClass2.<Load>b__0()
+                //   at AgFx.PriorityQueue.WorkerThread.<>c__DisplayClass5.<WorkerThreadProc>b__3(Object s)
+                //   at System.Threading.ThreadPool.WorkItem.doWork(Object o)
+                //   at System.Threading.Timer.ring()
+                //
+            catch (InvalidOperationException)
+            {
+            }
+            catch (IsolatedStorageException)
+            {
+            }
 
             foreach (var d in IsoStore.GetDirectoryNames(search)) {
                 files.AddRange(GetFilesRecursive(Path.Combine(root, d)));
