@@ -4,8 +4,14 @@
 // All other rights reserved.
 
 using System;
+#if WIN8
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
+#else
 using System.Windows;
 using System.Windows.Data;
+#endif
+
 
 namespace AgFx.Converters {
 

@@ -11,7 +11,15 @@ using System.Threading;
 using System.Reflection;
 using System.Linq;
 using System.Runtime.Serialization;
+
+
+#if WIN8
+
+#else
+using System.Windows;
 using System.Windows.Threading;
+#endif
+
 
 namespace AgFx
 {

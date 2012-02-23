@@ -10,8 +10,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+
+
+#if WIN8
+using Windows.UI.Xaml;
+#else
 using System.Windows;
 using System.Windows.Threading;
+#endif
 
 namespace AgFx
 {
@@ -51,7 +57,7 @@ namespace AgFx
         {
             get
             {
-                return Deployment.Current.Dispatcher.CheckAccess();
+                return Current.Dispatcher.CheckAccess();
             }
         }
 

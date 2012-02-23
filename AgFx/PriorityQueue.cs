@@ -7,8 +7,13 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+
+#if WIN8
+#else
 using System.Windows;
 using System.Windows.Threading;
+#endif
+
 using System.Diagnostics;
 
 namespace AgFx

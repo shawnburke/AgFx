@@ -5,8 +5,13 @@
 
 
 using System;
-using System.Threading;
+#if WIN8
+
+#else
+using System.Windows;
 using System.Windows.Threading;
+#endif
+
 
 namespace AgFx
 {
