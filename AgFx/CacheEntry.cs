@@ -649,9 +649,7 @@ namespace AgFx
                 GetRootedObjectInternal(false, out _rootedValue);
 
                 PriorityQueue.AddWorkItem(() =>
-                        {
-                            LoadInternal(force);
-                        }
+                    LoadInternal(force)
                 );
             }
         }
