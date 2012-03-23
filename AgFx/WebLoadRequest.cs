@@ -123,11 +123,25 @@ namespace AgFx {
                         if (IsGoodResponse(response)) {
                             // may need to copy this on the spot.
                             //
-                            byte[] bytes = new byte[response.ContentLength];
-                            Stream stream = response.GetResponseStream();
-                            stream.Read(bytes, 0, bytes.Length);
-                            stream.Close();
-                            result(new LoadRequestResult(new MemoryStream(bytes)));
+
+                            // content length isn't always right, so pinch it between 1K and 16K
+                            // See https://github.com/shawnburke/AgFx/issues/4
+                            //
+                            var length = Math.Min(short.MaxValue/2, Math.Max(1024, response.ContentLength)); 
+
+                            byte[] bytes = new byte[length];
+                            var resultStream = new MemoryStream(bytes.Length);
+                            using (Stream stream = response.GetResponseStream())
+                            {
+                                for (int count = stream.Read(bytes, 0, bytes.Length);
+                                     count > 0;
+                                     count = stream.Read(bytes, 0, bytes.Length))
+                                {
+                                    resultStream.Write(bytes, 0, count);
+                                }
+                            }
+                            resultStream.Seek(0, SeekOrigin.Begin);
+                            result(new LoadRequestResult(resultStream));
                             return;
                         }
                         else {
