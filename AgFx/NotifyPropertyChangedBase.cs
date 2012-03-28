@@ -20,7 +20,7 @@ namespace AgFx
     /// for notifying changes as well a facilities for thread switching and change notification cascading.
     /// </summary>
  
-  //  [DataContract]   
+   [DataContract]   
     public abstract class NotifyPropertyChangedBase : INotifyPropertyChanged
     {
 
