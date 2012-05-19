@@ -291,7 +291,7 @@ namespace AgFx {
         /// <returns>The instance of the item to use/databind to.  As the loads complete, the properties of this instance will be updated.</returns>
         public T Load<T>(LoadContext loadContext, Action<T> completed, Action<Exception> error) where T : new() {
             var cacheItem = Get<T>(loadContext, completed, error, true);
-            return (T)cacheItem.Value;
+            return (T)cacheItem.GetValue(false);
         }
 
         /// <summary>
@@ -315,7 +315,7 @@ namespace AgFx {
 
             var cacheItem = GetFromCache<T>(loadContext);
 
-            return (T)cacheItem.Value;
+            return (T)cacheItem.GetValue(true);
         }
 
         private void OnUnhandledError(Exception ex) {
