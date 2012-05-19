@@ -299,53 +299,50 @@ namespace AgFx
         /// <summary>
         /// Retrieve the value and do the right loading stuff 
         /// </summary>
-        public object Value
+        public object GetValue(bool cacheOnly)
         {
-            get
+            // do this to prevent AgFx crashing the design surface if called from a 
+            // UserControl ctor.
+            //
+            if (System.ComponentModel.DesignerProperties.IsInDesignTool) {
+                return null;
+            }
+
+            if (GettingValue)
             {
-                // do this to prevent AgFx crashing the design surface if called from a 
-                // UserControl ctor.
-                //
-                if (System.ComponentModel.DesignerProperties.IsInDesignTool) {
-                    return null;
-                }
+                return ValueInternal;
+            }
 
-                if (GettingValue)
+            try
+            {
+                GettingValue = true;
+                object value;
+
+                lock (this)
                 {
-                    return ValueInternal;
-                }
+                    GetRootedObjectInternal(false, out value);
 
-                try
-                {
-                    GettingValue = true;
-                    object value;
+                    _stats.OnRequest();
 
-                    lock (this)
+                    if (IsDataValid)
                     {
-                        GetRootedObjectInternal(false, out value);
-
-                        _stats.OnRequest();
-
-                        if (IsDataValid)
-                        {
-                            // do nothing, we're done!
-                            //
-                            NotifyCompletion(null, null);
-                        }
-                        else
-                        {
-                            // Data is out of date or not valid - kick off a new load.
-                            //
-                            Load(false);
-                        }
+                        // do nothing, we're done!
+                        //
+                        NotifyCompletion(null, null);
                     }
-                    Debug.Assert(value != null, "Fail: returning a null value!");
-                    return value;
+                    else if (!cacheOnly)
+                    {
+                        // Data is out of date or not valid - kick off a new load.
+                        //
+                        Load(false);
+                    }
                 }
-                finally
-                {
-                    GettingValue = false;
-                }
+                Debug.Assert(value != null, "Fail: returning a null value!");
+                return value;
+            }
+            finally
+            {
+                GettingValue = false;
             }
         }
 
