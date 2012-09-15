@@ -839,7 +839,11 @@ namespace AgFx {
                         if (result == null) {
                             throw new ArgumentNullException("result", "Execute must return a LoadRequestResult value.");
                         }
-                        if (result.Error == null) {
+                        if (result.NotModified)
+                        {
+                            lvl.OnLoadNotModified();
+                        }
+                        else if (result.Error == null) {
                             lvl.OnLoadSuccess(result.Stream);
                         }
                         else {

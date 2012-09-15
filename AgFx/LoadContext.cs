@@ -91,5 +91,7 @@ namespace AgFx {
         public override int GetHashCode() {
             return UniqueKey.GetHashCode();
         }
+        
+        internal string ETag { get; set; }
     }
 }

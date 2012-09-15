@@ -114,5 +114,15 @@ namespace AgFx {
         /// <param name="info"></param>
         /// <param name="data"></param>
         public abstract void Write(CacheItemInfo info, byte[] data);
+
+        /// <summary>
+        /// Update an items details in the store
+        /// </summary>
+        /// <param name="oldInfo">The old cache entry</param>
+        /// <param name="newInfo">The new cache entry</param>
+        public virtual void Update(CacheItemInfo oldInfo, CacheItemInfo newInfo)
+        {
+            throw new NotImplementedException("");
+        }
     }
 }

@@ -89,6 +89,16 @@ namespace AgFx {
         }
 
         /// <summary>
+        /// if not modified and not dealt with by IsGoodResponse
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        protected bool IsNotModified(HttpWebResponse response)
+        {
+            return response.StatusCode == HttpStatusCode.NotModified;
+        }
+
+        /// <summary>
         /// Performs the actual HTTP get for this request.
         /// </summary>
         /// <param name="result"></param>
@@ -104,6 +114,11 @@ namespace AgFx {
                 {
                     var request = CreateWebRequest();
 
+                    if (!string.IsNullOrEmpty(LoadContext.ETag))
+                    {
+                        request.Headers["If-None-Match"] = LoadContext.ETag;
+                    }
+
                     AsyncCallback responseHandler = (asyncObject) =>
                     {
                         HttpWebResponse response = null;
@@ -117,8 +132,6 @@ namespace AgFx {
                             result(new LoadRequestResult(we));
                             return;
                         }
-
-
 
                         if (IsGoodResponse(response)) {
                             // may need to copy this on the spot.
@@ -140,9 +153,16 @@ namespace AgFx {
                                     resultStream.Write(bytes, 0, count);
                                 }
                             }
+
+                            LoadContext.ETag = response.Headers["Etag"];
+
                             resultStream.Seek(0, SeekOrigin.Begin);
                             result(new LoadRequestResult(resultStream));
                             return;
+                        }
+                        else if (IsNotModified(response))
+                        {
+                            result(new LoadRequestResult(true));
                         }
                         else {
                             result(new LoadRequestResult(new WebException("Bad web response, StatusCode=" + response.StatusCode)));
