@@ -290,8 +290,7 @@ namespace AgFx.IsoStore {
                             // haven't yet found a repro.  So for the retry,
                             // if we failed, sleep for a bit and then try again.
                             //
-                            // SW: I have found that having '/' in the uniqueName
-                            // can cause this exception even after encoding
+                            // SW: I can repro this with a long unique name - originally thought '/' in the name were the cause
                             Thread.Sleep(50);
                         }
                     }

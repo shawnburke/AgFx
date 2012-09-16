@@ -38,6 +38,8 @@ namespace AgFx {
         /// </summary>
         public string ContentType { get; set; }
 
+        public bool SupportEtags { get; private set; }
+
         /// <summary>
         /// Create a WebLoadRequest
         /// </summary>
@@ -53,6 +55,20 @@ namespace AgFx {
         /// Create a WebLoadRequest
         /// </summary>
         /// <param name="loadContext"></param>
+        /// <param name="uri"></param>
+        /// <param name="supportEtags"></param>
+        public WebLoadRequest(LoadContext loadContext, Uri uri, bool supportEtags)
+            : base(loadContext)
+        {
+            Uri = uri;
+            Method = "GET";
+            SupportEtags = supportEtags;
+        }
+
+        /// <summary>
+        /// Create a WebLoadRequest
+        /// </summary>
+        /// <param name="loadContext"></param>
         /// <param name="uri">The URI to request</param>
         /// <param name="method">The method to request - GET or POST</param>
         /// <param name="data">The data for a POST request</param>
@@ -60,6 +76,22 @@ namespace AgFx {
             : this(loadContext, uri) {
             Method = method;
             Data = data;
+        }
+
+        /// <summary>
+        /// Create a WebLoadRequest
+        /// </summary>
+        /// <param name="loadContext"></param>
+        /// <param name="uri">The URI to request</param>
+        /// <param name="method">The method to request - GET or POST</param>
+        /// <param name="data">The data for a POST request</param>
+        /// <param name="supportEtags"></param>
+        public WebLoadRequest(LoadContext loadContext, Uri uri, string method, string data, bool supportEtags)
+            : this(loadContext, uri)
+        {
+            Method = method;
+            Data = data;
+            SupportEtags = supportEtags;
         }
 
         /// <summary>
@@ -114,7 +146,7 @@ namespace AgFx {
                 {
                     var request = CreateWebRequest();
 
-                    if (!string.IsNullOrEmpty(LoadContext.ETag))
+                    if (SupportEtags && !string.IsNullOrEmpty(LoadContext.ETag))
                     {
                         request.Headers["If-None-Match"] = LoadContext.ETag;
                     }
@@ -154,7 +186,8 @@ namespace AgFx {
                                 }
                             }
 
-                            LoadContext.ETag = response.Headers["Etag"];
+                            if (SupportEtags)
+                                LoadContext.ETag = response.Headers["Etag"];
 
                             resultStream.Seek(0, SeekOrigin.Begin);
                             result(new LoadRequestResult(resultStream));
