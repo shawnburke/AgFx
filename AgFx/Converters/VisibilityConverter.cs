@@ -4,6 +4,7 @@
 // All other rights reserved.
 
 using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Data;
 
@@ -45,6 +46,10 @@ namespace AgFx.Converters {
             }
             else if (value is string) {
                 visible = ((string)value).Length > 0;
+            }
+            else if (value as ICollection != null)
+            {
+                visible = (value as ICollection).Count > 0;
             }
             else if (value == null) {
                 visible = false;
