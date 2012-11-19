@@ -537,7 +537,7 @@ namespace AgFx
 
             // write the value out to the cache store.
             //
-            _cacheLoader.Save(UniqueName, data, updateTime, expirationTime.Value, isOptimized);
+            _cacheLoader.Save(UniqueName, data, updateTime, expirationTime.Value, isOptimized, LoadContext.ETag);
             return true;
         }
 
@@ -728,6 +728,8 @@ namespace AgFx
                     // first check the cache state.
                     //
                     var isCacheValid = _cacheLoader.IsValid;
+
+                    LoadContext.ETag = _cacheLoader.GetEtag();
 
                     if (!isCacheValid)
                     {
@@ -968,6 +970,7 @@ namespace AgFx
         {
             public object Value { get; set; }
             public DateTime UpdateTime { get; set; }
+            public String ETag { get; set; }
         }
 
         /// <summary>
@@ -1122,7 +1125,6 @@ namespace AgFx
 
                 try
                 {
-
                     if (data != null)
                     {
                         if (!CacheEntry.CheckIfAnyoneCares())
@@ -1149,6 +1151,20 @@ namespace AgFx
             }
 
             protected abstract object ProcessDataCore(byte[] data);
+
+            internal void OnLoadNotModified()
+            {
+                var origCacheItemInfo = DataManager.StoreProvider.GetLastestExpiringItem(CacheEntry.UniqueName);
+                var newCacheItemInfo = new CacheItemInfo(origCacheItemInfo.UniqueName)
+                                           {
+                                               ETag = origCacheItemInfo.ETag,
+                                               ExpirationTime = DateTime.Now.Add(CacheEntry.CacheTime), // update with new expiry time
+                                               IsOptimized = origCacheItemInfo.IsOptimized,
+                                               UpdatedTime = origCacheItemInfo.UpdatedTime
+                                           };
+
+                DataManager.StoreProvider.Update(origCacheItemInfo, newCacheItemInfo);
+            }
 
             // Fire the load failed event
             //
@@ -1266,6 +1282,15 @@ namespace AgFx
                 }
             }
 
+            public String GetEtag()
+            {
+                if (FindCacheItem())
+                {
+                    return _cacheItemInfo.ETag;
+                }
+                return null;
+            }
+
             /// <summary>
             /// Pull the data off the store
             /// </summary>
@@ -1278,7 +1303,7 @@ namespace AgFx
                     // nope, nevermind.
                     return false;
                 }
-
+                
                 // if we have cached data, then mark ourself as loadable and load it up.
                 //
                 Debug.WriteLine(String.Format("{3}: Loading cached data for {0} (ID={4}), Last Updated={1}, Expiration={2}", CacheEntry.ObjectType.Name, _cacheItemInfo.UpdatedTime, _cacheItemInfo.ExpirationTime, DateTime.Now, CacheEntry.LoadContext.Identity));
@@ -1288,6 +1313,7 @@ namespace AgFx
                 try
                 {
                     Data = DataManager.StoreProvider.Read(_cacheItemInfo);
+
 
 
                     if (Data == null) {
@@ -1353,7 +1379,8 @@ namespace AgFx
             /// <param name="updatedTime"></param>
             /// <param name="expirationTime"></param>
             /// <param name="isOptimized"></param>
-            public void Save(string uniqueName, byte[] data, DateTime updatedTime, DateTime expirationTime, bool isOptimized)
+            /// <param name="etag"></param>
+            public void Save(string uniqueName, byte[] data, DateTime updatedTime, DateTime expirationTime, bool isOptimized, String etag)
             {
                 if (data == null)
                 {
@@ -1362,10 +1389,15 @@ namespace AgFx
 
                 _cacheItemInfo = new CacheItemInfo(uniqueName, updatedTime, expirationTime);
                 _cacheItemInfo.IsOptimized = isOptimized;
+                _cacheItemInfo.ETag = etag;
                 Data = null;
                 LoadState = DataLoadState.None;
 
-                Debug.WriteLine("Writing cache for {0} (ID={3}), IsOptimized={1}, Will expire {2}", CacheEntry.ObjectType.Name, _cacheItemInfo.IsOptimized, _cacheItemInfo.ExpirationTime, CacheEntry.LoadContext.Identity.ToString() );
+                Debug.WriteLine("Writing cache for {0} (ID={3}), IsOptimized={1}, Will expire {2}, Etag={4}", 
+                    CacheEntry.ObjectType.Name, _cacheItemInfo.IsOptimized, _cacheItemInfo.ExpirationTime, 
+                    CacheEntry.LoadContext.Identity.ToString(),
+                    _cacheItemInfo.ETag);
+
                 DataManager.StoreProvider.Write(_cacheItemInfo, data);
             }
 

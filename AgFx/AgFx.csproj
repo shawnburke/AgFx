@@ -81,6 +81,7 @@
     <Compile Include="CacheItemInfo.cs" />
     <Compile Include="CachePolicy.cs" />
     <Compile Include="CachePolicyAttribute.cs" />
+    <Compile Include="CacheTimeOut.cs" />
     <Compile Include="Converters\NotConverter.cs" />
     <Compile Include="DataLoaderBase.cs" />
     <Compile Include="DataLoaderProxy.cs" />

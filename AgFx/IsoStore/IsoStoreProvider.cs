@@ -284,17 +284,48 @@ namespace AgFx.IsoStore {
                             _cache[info.UniqueName] = info;                            
                             break;
                         }
-                        catch (IsolatedStorageException) {
-                            Debug.WriteLine("Exception writing file: Name={0}, Length={1}", fi.FileName, data.Length);
+                        catch (IsolatedStorageException ex) {
+                            Debug.WriteLine("Exception writing file: Name={0}, Length={1}, {2}", fi.FileName, data.Length, ex.Message);
                             // These IsolatedStorageExceptions seem to happen at random,
                             // haven't yet found a repro.  So for the retry,
                             // if we failed, sleep for a bit and then try again.
                             //
+                            // SW: I can repro this with a long unique name - originally thought '/' in the name were the cause
                             Thread.Sleep(50);
                         }
                     }
                 }
             });
+        }
+
+        public override void Update(CacheItemInfo oldInfo, CacheItemInfo newInfo)
+        {
+            if (oldInfo.Equals(newInfo)) return;
+
+            var oldFilename = new FileItem(oldInfo).FileName;
+            var newFilename = new FileItem(newInfo).FileName;
+
+            PriorityQueue.AddStorageWorkItem(() =>
+                {
+                    lock (LockObject)
+                    {
+                        using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+                        {
+                            if (store.FileExists(newFilename)) 
+                                store.DeleteFile(newFilename);
+
+                            using (var readStream = new IsolatedStorageFileStream(oldFilename, FileMode.Open, store))
+                            using (var writeStream = new IsolatedStorageFileStream(newFilename, FileMode.Create, store))
+                            using (var reader = new StreamReader(readStream))
+                            using (var writer = new StreamWriter(writeStream))
+                            {
+                                writer.Write(reader.ReadToEnd());
+                            }
+
+                            store.DeleteFile(oldFilename);
+                        }
+                    }
+                });
         }
 
 
@@ -415,14 +446,16 @@ namespace AgFx.IsoStore {
                     string[] parts = fileName
                         .Split(FileNameSeparator);
 
-                    if (parts.Length == 4) {
+                    if (parts.Length == 5)
+                    {
 
                         string uniqueKey = DecodePathName(parts[0]);
 
                         var item = new CacheItemInfo(uniqueKey) {
                             ExpirationTime = new DateTime(Int64.Parse(parts[2])),
                             UpdatedTime = new DateTime(Int64.Parse(parts[3])),
-                            IsOptimized = Boolean.Parse(parts[1])
+                            IsOptimized = Boolean.Parse(parts[1]),
+                            ETag = DecodePathName(parts[4])
                         };
 
                         return item;
@@ -442,7 +475,8 @@ namespace AgFx.IsoStore {
 
             private static string ToFileName(CacheItemInfo item) {
                 string name = EncodePathName(item.UniqueName);
-                name = String.Format("{1}{0}{2}{0}{3}{0}{4}", FileNameSeparator, name, item.IsOptimized, item.ExpirationTime.Ticks, item.UpdatedTime.Ticks);
+                string etag = EncodePathName(item.ETag);
+                name = String.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}", FileNameSeparator, name, item.IsOptimized, item.ExpirationTime.Ticks, item.UpdatedTime.Ticks, etag);
                 name = Path.Combine(DirectoryHash(item.UniqueName), name);
                 return name;
             }

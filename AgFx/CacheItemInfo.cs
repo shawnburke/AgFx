@@ -35,6 +35,15 @@ namespace AgFx
         /// </summary>
         public bool IsOptimized { get; set; }
 
+        private string _etag;
+        /// <summary>
+        /// An Etag
+        /// </summary>
+        public string ETag
+        {
+            get { return _etag ?? "0"; }
+            set { _etag = value; }
+        }
 
         /// <summary>
         /// Ctor that takes the unique key
@@ -67,7 +76,7 @@ namespace AgFx
         {
             var other = (CacheItemInfo)obj;
 
-            return other.UniqueName == UniqueName && other.UpdatedTime == UpdatedTime && other.ExpirationTime == ExpirationTime && other.IsOptimized == IsOptimized;
+            return other.UniqueName == UniqueName && other.UpdatedTime == UpdatedTime && other.ExpirationTime == ExpirationTime && other.IsOptimized == IsOptimized && other.ETag == ETag;
         }
 
         /// <summary>
@@ -76,7 +85,7 @@ namespace AgFx
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return UniqueName.GetHashCode() ^ UpdatedTime.GetHashCode() ^ ExpirationTime.GetHashCode() ^ IsOptimized.GetHashCode();
+            return UniqueName.GetHashCode() ^ UpdatedTime.GetHashCode() ^ ExpirationTime.GetHashCode() ^ IsOptimized.GetHashCode() ^ (ETag ?? String.Empty).GetHashCode();
         }
     }
 }

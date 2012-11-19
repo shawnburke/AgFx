@@ -32,6 +32,15 @@ namespace AgFx
         }
 
         /// <summary>
+        /// Indicates the result is not modified
+        /// </summary>
+        public bool NotModified
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
         /// Construct a LoadRequestResult with a data stream as a result of a
         /// LoadRequest.Execute invocation.
         /// </summary>
@@ -48,6 +57,15 @@ namespace AgFx
         public LoadRequestResult(Exception error)
         {
             Error = error;
+        }
+
+        /// <summary>
+        /// Construct a result where the data is not modified HTTP 304
+        /// </summary>
+        /// <param name="notModified"></param>
+        public LoadRequestResult(bool notModified)
+        {
+            NotModified = notModified;
         }
     }
 }

@@ -9,7 +9,6 @@ using System;
 
 namespace AgFx
 {
-
     /// <summary>
     /// Attribute for marking the CachePolicy on a cached item.
     /// 
@@ -32,7 +31,11 @@ namespace AgFx
         /// 
         /// Ignored for NoCache (assumed 0) and Forever (assumed Int32.MaxValue).
         /// </summary>
-        public int CacheTimeInSeconds { get; set; }
+        public int CacheTimeInSeconds
+        {
+            get { return CacheTimeOut.TimeOutValue; }
+            set { CacheTimeOut = new DefaultCacheTimeOut(value); }
+        }
 
         /// <summary>
         /// The CachePolicy for this item.
@@ -47,6 +50,18 @@ namespace AgFx
             : this(policy, DefaultSeconds)
         {
             
+        }
+
+        private readonly CacheTimeOut _defaultCacheTimeOut = new DefaultCacheTimeOut(300);
+        private CacheTimeOut _cacheTimeOut;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CacheTimeOut CacheTimeOut
+        {
+            private get { return _cacheTimeOut ?? _defaultCacheTimeOut; }
+            set { _cacheTimeOut = value; }
         }
 
         /// <summary>
@@ -65,6 +80,29 @@ namespace AgFx
                     break;
                 default:
                     CacheTimeInSeconds = cacheTimeInSeconds;
+                    break;
+            }
+            CachePolicy = policy;
+        }
+
+        /// <summary>
+        /// Using CacheTimeout object allows us to have a variable cache time
+        /// </summary>
+        /// <param name="policy">The CachePolicy value</param>
+        /// <param name="cacheTimeOut">The calculated time to cache.  Ignored for NoCache (assumed 0) and Forever (assumed Int32.MaxValue).</param>
+        public CachePolicyAttribute(CachePolicy policy, Type cacheTimeOut)
+        {
+            CacheTimeOut timeOut = (CacheTimeOut)cacheTimeOut.GetConstructor(new Type[0]).Invoke(null);
+            switch (policy)
+            {
+                case AgFx.CachePolicy.NoCache:
+                    CacheTimeInSeconds = 0;
+                    break;
+                case AgFx.CachePolicy.Forever:
+                    CacheTimeInSeconds = Int32.MaxValue;
+                    break;
+                default:
+                    CacheTimeOut = timeOut;
                     break;
             }
             CachePolicy = policy;
